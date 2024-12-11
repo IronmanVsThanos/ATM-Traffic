@@ -25,6 +25,12 @@ This project introduces an innovative Adaptive Token Modulator (ATM) strategy th
 2. Introduction of the novel **Adaptive Token Modulator (ATM)** strategy
 3. Achievement of outstanding cross-scenario generalization capability
 
+## 📊 Videos
+https://github.com/user-attachments/assets/2dbba8c7-b4a2-4818-af12-d1a478e1383d
+https://github.com/user-attachments/assets/cb8a9c54-7ec3-4745-85d0-fdb9ce4d0be8
+https://github.com/user-attachments/assets/30d53f01-979f-48a6-b97e-e5f062af2356
+
+
 ## 📊 Performance
 
 | Dataset | Zero-shot (1% params) | Few-shot (<10% data) |
