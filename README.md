@@ -36,9 +36,9 @@ This project introduces an innovative Adaptive Token Modulator (ATM) strategy th
 ## 🔜 Coming Soon
 - [✔] arxiv
 - [✔] video
-- [✔] code
-- [✔] Pre-trained Models
-- [✔] Detailed Documentation
+- [ ] code
+- [ ] Pre-trained Models
+- [ ] Detailed Documentation
 
 ## 🌟 Key Features
 
