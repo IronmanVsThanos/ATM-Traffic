@@ -14,7 +14,7 @@
 
 This project introduces an innovative Adaptive Token Modulator (ATM) strategy that effectively leverages Vision Foundation Models (VFMs) to address data scarcity in roadside-view traffic scene parsing. Key features:
 
-- 🚀 **High Efficiency**: Achieves SOTA prefermance with 78.9% mIoU on TSP6K with only 2.5% trainable parameters (7.7M)
+- 🚀 **High Efficiency**: Achieves SOTA performance with 78.9% mIoU on TSP6K with only 2.5% trainable parameters (7.7M)
 - 💡 **Innovation**: First application of VFMs to roadside traffic scene parsing
 - 🌟 **Strong Generalization**: Excellent performance in few-shot scenarios
 - 🎯 **Practical Value**: Superior performance in challenging conditions (e.g., night scenes)
@@ -31,6 +31,11 @@ https://github.com/user-attachments/assets/2dbba8c7-b4a2-4818-af12-d1a478e1383d
 https://github.com/user-attachments/assets/cb8a9c54-7ec3-4745-85d0-fdb9ce4d0be8
 
 https://github.com/user-attachments/assets/30d53f01-979f-48a6-b97e-e5f062af2356
+
+
+## 📊 requirements
+# todo
+
 
 
 ## 📊 Performance
