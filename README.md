@@ -78,7 +78,8 @@ pip install -r requirements.txt
 │   │   │   ├── val
 ```
 ## Pretraining Weights
-Download: Download pre-trained weights(512*512 and 1024*1024) from:链接: https://pan.baidu.com/s/1ZzjVdNPYrMPZBDgfvVjOkQ?pwd=tjqh 提取码: tjqh 
+Download: Download pre-trained weights(512*512 or 1024*1024) 
+from:链接: https://pan.baidu.com/s/1ZzjVdNPYrMPZBDgfvVjOkQ?pwd=tjqh 提取码: tjqh 
 
 
 ## Training
@@ -90,9 +91,13 @@ PORT=12345 CUDA_VISIBLE_DEVICES=1,2,3,4 bash tools/dist_train.sh configs/dinov2/
 CUDA_VISIBLE_DEVICES=1,2,3,4 python tools/test.py configs/dinov2/atm_dinov2_mask2former_1024x1024_bs4x2.py  work_dirs/atm_dinov2_mask2former_1024x1024_bs4x2/iter_40000.pth --backbone ./checkpoints/dinov2_converted_1024x1024.pth
 ```
 ## Visulioze
+for img:
 ```bash
-for img: python tools/visualize.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
-for video: python tools/visualize_video.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
+python tools/visualize.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
+```
+for video:
+```bash
+ python tools/visualize_video.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
 ```
 
 
