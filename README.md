@@ -75,7 +75,7 @@ pip install -r requirements.txt
 ```
 ## 💡Pretraining Weights
 Download: Download pre-trained weights(512*512 or 1024*1024) 
-from:链接: https://pan.baidu.com/s/1ZzjVdNPYrMPZBDgfvVjOkQ?pwd=tjqh 提取码: tjqh 
+from:链接: https://pan.baidu.com/s/1ayhDCYFoJ-FV9e5XwSnKBw?pwd=e93a 提取码: e93a 
 
 
 ##💡 Training
