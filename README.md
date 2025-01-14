@@ -41,9 +41,6 @@ Traffic scene parsing from roadside views faces significant challenges due to li
 # Clone the repository
 git clone https://github.com/IronmanVsThanos/ATM-Traffic.git
 cd ATM-Traffic
-```
-# Create and activate conda environment
-```bash
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia -y
 pip install -U openmim
 mim install mmengine
