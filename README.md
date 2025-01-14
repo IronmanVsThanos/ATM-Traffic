@@ -32,8 +32,9 @@ Traffic scene parsing from roadside views faces significant challenges due to li
 # Clone the repository
 git clone https://github.com/IronmanVsThanos/ATM-Traffic.git
 cd ATM-Traffic
-
+```
 # Create and activate conda environment
+```bash
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia -y
 pip install -U openmim
 mim install mmengine
@@ -70,14 +71,17 @@ pip install -r requirements.txt
 Download: Download pre-trained weights(512*512 and 1024*1024) from:
 
 ## Training
+```bash
 PORT=12345 CUDA_VISIBLE_DEVICES=1,2,3,4 bash tools/dist_train.sh configs/dinov2/atm_dinov2_mask2former_1024x1024_bs4x2.py NUM_GPUS
-
+```
 ## Evaluation
+```bash
 CUDA_VISIBLE_DEVICES=1,2,3,4 python tools/test.py configs/dinov2/atm_dinov2_mask2former_1024x1024_bs4x2.py  work_dirs/atm_dinov2_mask2former_1024x1024_bs4x2/iter_40000.pth --backbone ./checkpoints/dinov2_converted_1024x1024.pth
-
+```
 ## Visulioze
+```bash
 for img: python tools/visualize.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
 for video: python tools/visualize_video.py /path/to/cfg /path/to/checkpoint /path/to/images --backbone /path/to/converted_backbone
-
+```
 
 
