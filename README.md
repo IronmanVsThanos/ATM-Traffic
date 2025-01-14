@@ -25,8 +25,7 @@ Traffic scene parsing from roadside views faces significant challenges due to li
 - Shows strong generalization capability in zero-shot and few-shot scenarios
 - Performs robustly in challenging conditions (night, rain, etc.)
 
-## Key Features
-
+## 📊 Performance
 - **Parameter Efficiency**: Achieves 78.9% mIoU on TSP6K using only 7.7M parameters (2.5% of full model)
 - **Zero-shot Performance**: 
   - Cityscapes: 76.28% mIoU
