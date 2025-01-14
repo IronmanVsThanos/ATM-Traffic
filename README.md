@@ -6,6 +6,12 @@
 
 This is the official implementation of "Cross-domain Traffic Scene Parsing via Vision Foundation Models: A Roadside Data Scarcity Solution"
 
+## Video
+sunday：
+https://github.com/IronmanVsThanos/ATM-Traffic/issues/1#issue-2732612286
+
+
+
 ## Overview
 
 Traffic scene parsing from roadside views faces significant challenges due to limited data availability and poor generalization of existing methods. We propose ATM (Adaptive Token Modulator), a novel approach that:
