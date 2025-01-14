@@ -1,6 +1,6 @@
 gta_type = "CityscapesDataset"
-gta_root = "data/gta/"
-gta_root = "data/gta/"
+gta_root = "/data/DL/code/atm/data/gta/"
+# gta_root = "data/gta/"
 gta_crop_size = (512, 512)
 gta_train_pipeline = [
     dict(type="LoadImageFromFile"),

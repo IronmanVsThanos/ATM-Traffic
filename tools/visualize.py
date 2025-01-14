@@ -11,9 +11,9 @@ sys.path.append(os.curdir)
 from mmengine.config import Config
 from mmseg.utils import get_classes, get_palette
 from mmengine.runner.checkpoint import _load_checkpoint
-from rein.utils import init_model
+from atm.utils import init_model
 from mmseg.apis import inference_model
-import rein
+import atm
 import tqdm
 import mmengine
 import torch
@@ -22,18 +22,18 @@ from PIL import Image
 
 def parse_args():
     parser = argparse.ArgumentParser(description="MMSeg test (and eval) a model")
-    parser.add_argument("config", help="Path to the training configuration file.")
-    parser.add_argument("checkpoint", help="Path to the checkpoint file for both the REIN and head models.")
-    parser.add_argument("images", help="Directory or file path of images to be processed.")
-    parser.add_argument("--suffix", default=".png", help="File suffix to filter images in the directory. Default is '.png'.")
+    parser.add_argument("--config", default="./configs/dinov2/atm_dinov2_mask2former_1024x1024_bs4x2.py", help="Path to the training configuration file.")
+    parser.add_argument("--checkpoint",default="/data/DL/code/atm/work_dirs/atm_dinov2_mask2former_1024x1024_bs4x2/20241128_142012_atm_tsp1024/iter_40000.pth", help="Path to the checkpoint file for both the atm and head models.")
+    parser.add_argument("--images", default="./data/yap_img/", help="Directory or file path of images to be processed.")
+    parser.add_argument("--suffix", default=".jpg", help="File suffix to filter images in the directory. Default is '.png'.")
     parser.add_argument("--not-recursive", action='store_false', help="Whether to search images recursively in subfolders. Default is recursive.")
     parser.add_argument("--search-key", default="", help="Keyword to filter images within the directory. Default is no filtering.")
     parser.add_argument(
         "--backbone",
-        default="checkpoints/dinov2_vitl14_converted_1024x1024.pth",
+        default="/data/DL/code/atm/checkpoints/dinov2_converted_1024x1024.pth",
         help="Path to the backbone model checkpoint. Default is 'checkpoints/dinov2_vitl14_converted_1024x1024.pth'."
     )
-    parser.add_argument("--save_dir", default="work_dirs/show", help="Directory to save the output images. Default is 'work_dirs/show'.")
+    parser.add_argument("--save_dir", default="work_dirs/yap", help="Directory to save the output images. Default is 'work_dirs/show'.")
     parser.add_argument("--tta", action="store_true", help="Enable test time augmentation. Default is disabled.")
     parser.add_argument("--device", default="cuda:0", help="Device to use for computation. Default is 'cuda:0'.")
     args = parser.parse_args()
@@ -51,9 +51,20 @@ def load_backbone(checkpoint: dict, backbone_path: str) -> None:
         )
 
 
-classes = get_classes("cityscapes")
-palette = get_palette("cityscapes")
+# classes = get_classes("cityscapes")
+# palette = get_palette("cityscapes")
+CLASSES = ('road', 'sidewalk', 'building', 'wall', 'railing', 'vegetation',
+          'terrain', 'sky', 'person', 'rider', 'car', 'truck',
+          'bus', 'motorcycle', 'bicycle', 'indication line', 'lane line',
+          'crosswalk', 'pole', 'traffic light', 'traffic sign')
 
+palette = [[128, 64, 128], [244, 35, 232], [70, 70, 70], [80, 90, 40],
+           [180,165,180], [107,142, 35], [152,251,152], [70,130,180],
+           [255,  0,  0], [255, 100, 0], [  0,  0,142],
+           [  0,  0, 70], [  0, 60,100], [  0,  0,230], [119, 11, 32],
+           [250,170,160], [250,200,160], [250,240,180],
+           [153,153,153], [250,170, 30], [220,220,  0]]
+classes = CLASSES
 
 def draw_sem_seg(sem_seg: torch.Tensor):
     num_classes = len(classes)
@@ -80,10 +91,10 @@ def main():
         cfg.test_pipeline = [
             dict(type="LoadImageFromFile"),
             dict(
-                keep_ratio=True,
+                keep_ratio=False,
                 scale=(
-                    1920,
-                    1080,
+                    2048,
+                    1024,
                 ),
                 type="Resize",
             ),

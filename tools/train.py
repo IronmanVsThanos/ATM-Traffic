@@ -13,12 +13,13 @@ from mmengine.logging import print_log
 from mmengine.runner import Runner
 
 from mmseg.registry import RUNNERS
-import rein
-
+import atm
+# os.environ['CUDA_VISIBLE_DEVICES']='0'
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train a segmentor")
     parser.add_argument("config", help="train config file path")
+    # parser.add_argument("config", default='configs/dinov2/atm_dinov2_mask2former_512x512_bs1x4.py', help="train config file path")
     parser.add_argument("--work-dir", help="the dir to save logs and models")
     parser.add_argument(
         "--resume",

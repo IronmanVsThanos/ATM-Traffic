@@ -11,7 +11,7 @@ param_scheduler = [
 ]
 
 # training schedule for 40k
-train_cfg = dict(type="IterBasedTrainLoop", max_iters=40000, val_interval=8000)
+train_cfg = dict(type="IterBasedTrainLoop", max_iters=40000, val_interval=4000)
 val_cfg = dict(type="ValLoop")
 test_cfg = dict(type="TestLoop")
 default_hooks = dict(

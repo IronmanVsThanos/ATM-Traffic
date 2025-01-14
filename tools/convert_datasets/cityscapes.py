@@ -1,8 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import os.path as osp
-
+import os
 import mmcv
+import mmengine
 from cityscapesscripts.preparation.json2labelImg import json2labelImg
 
 
@@ -27,25 +28,26 @@ def main():
     args = parse_args()
     cityscapes_path = args.cityscapes_path
     out_dir = args.out_dir if args.out_dir else cityscapes_path
-    mmcv.mkdir_or_exist(out_dir)
+    # mmcv.mkdir_or_exist(out_dir)
+    os.makedirs(out_dir, exist_ok=True)
 
     gt_dir = osp.join(cityscapes_path, args.gt_dir)
 
     poly_files = []
-    for poly in mmcv.scandir(gt_dir, '_polygons.json', recursive=True):
+    for poly in mmengine.scandir(gt_dir, '_polygons.json', recursive=True):
         poly_file = osp.join(gt_dir, poly)
         poly_files.append(poly_file)
     if args.nproc > 1:
-        mmcv.track_parallel_progress(convert_json_to_label, poly_files,
+        mmengine.track_parallel_progress(convert_json_to_label, poly_files,
                                      args.nproc)
     else:
-        mmcv.track_progress(convert_json_to_label, poly_files)
+        mmengine.track_progress(convert_json_to_label, poly_files)
 
     split_names = ['train', 'val', 'test']
 
     for split in split_names:
         filenames = []
-        for poly in mmcv.scandir(
+        for poly in mmengine.scandir(
                 osp.join(gt_dir, split), '_polygons.json', recursive=True):
             filenames.append(poly.replace('_gtFine_polygons.json', ''))
         with open(osp.join(out_dir, f'{split}.txt'), 'w') as f:

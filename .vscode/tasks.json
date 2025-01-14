@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Train ATM DINOv2",
+            "type": "shell",
+            "command": "CUDA_VISIBLE_DEVICES=3 python tools/train.py debugconfigs/dinov2/atm_dinov2_mask2former_512x512_bs1x4.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

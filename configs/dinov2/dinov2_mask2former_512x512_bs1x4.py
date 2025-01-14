@@ -1,6 +1,6 @@
 # dataset config
 _base_ = [
-    "../_base_/datasets/dg_gta_512x512.py",
+    "../_base_/datasets/dg_cityscapes_512x512.py",
     "../_base_/default_runtime.py",
     "../_base_/models/dinov2_mask2former.py"
 ]
@@ -34,7 +34,7 @@ optim_wrapper = dict(
             "query_embed": embed_multi,
             "level_embed": embed_multi,
             "learnable_tokens": embed_multi,
-            "reins.scale": embed_multi,
+            "atms.scale": embed_multi,
         },
         norm_decay_mult=0.0,
     ),

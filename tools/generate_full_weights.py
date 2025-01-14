@@ -36,8 +36,8 @@ def load_backbone(path: str):
 def main(args):
     dinov2_segmentor_path = args.dinov2_segmentor_path
     backbone = args.backbone
-    rein_head = args.rein_head
-    weight = torch.load(rein_head, map_location='cpu')
+    atm_head = args.atm_head
+    weight = torch.load(atm_head, map_location='cpu')
     weight['state_dict'].update({f'backbone.{k}': v for k, v in load_backbone(backbone).items()})
     torch.save(weight, dinov2_segmentor_path)
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Load and process model weights.")
     parser.add_argument("--dinov2_segmentor_path", required=True, help="Path to the DINOv2 segmentor checkpoint")
     parser.add_argument("--backbone", required=True, help="Path to the DINOv2 backbone weights")
-    parser.add_argument("--rein_head", required=True, help="Path to the REIN weights")
+    parser.add_argument("--atm_head", required=True, help="Path to the atm weights")
     
     args = parser.parse_args()
     main(args)
@@ -87,8 +87,8 @@ def load_backbone(path: str):
 def main(args):
     dinov2_segmentor_path = args.dinov2_segmentor_path
     backbone = args.backbone
-    rein_head = args.rein_head
-    weight = torch.load(rein_head, map_location='cpu')
+    atm_head = args.atm_head
+    weight = torch.load(atm_head, map_location='cpu')
     weight['state_dict'].update({f'backbone.{k}': v for k, v in load_backbone(backbone).items()})
     torch.save(weight, dinov2_segmentor_path)
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Load and process model weights.")
     parser.add_argument("--dinov2_segmentor_path", required=True, help="Path to the DINOv2 segmentor checkpoint")
     parser.add_argument("--backbone", required=True, help="Path to the DINOv2 backbone weights")
-    parser.add_argument("--rein_head", required=True, help="Path to the REIN weights")
+    parser.add_argument("--atm_head", required=True, help="Path to the atm weights")
     
     args = parser.parse_args()
     main(args)

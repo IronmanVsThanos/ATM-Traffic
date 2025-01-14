@@ -17,7 +17,7 @@ fog_acdc_train_pipeline = [
 ]
 fog_acdc_val_pipeline = [
     dict(type="LoadImageFromFile"),
-    dict(type="Resize", scale=(1920, 1080), keep_ratio=True),
+    dict(type="Resize", scale=(2048, 1024), keep_ratio=False),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
     dict(type="LoadAnnotations"),
@@ -25,7 +25,7 @@ fog_acdc_val_pipeline = [
 ]
 fog_acdc_test_pipeline = [
     dict(type="LoadImageFromFile"),
-    dict(type="Resize", scale=(1920, 1080), keep_ratio=True),
+    dict(type="Resize", scale=(2048, 1024), keep_ratio=False),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
     dict(type="PackSegInputs"),

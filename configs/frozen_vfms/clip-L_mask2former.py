@@ -19,7 +19,7 @@ train_pipeline = [
     dict(type="PhotoMetricDistortion"),
     dict(type="PackSegInputs"),
 ]
-train_dataloader = dict(batch_size=4, dataset=dict(pipeline=train_pipeline))
+# train_dataloader = dict(batch_size=4, dataset=dict(pipeline=train_pipeline))
 
 # AdamW optimizer, no weight decay for position embedding & layer norm
 # in backbone
