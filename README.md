@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 
 ## Dataset Preparation
-
+```bash
 ├── data
 │   ├── cityscapes
 │   │   ├── leftImg8bit
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 │   │   ├── labels
 │   │   |   ├── train
 │   │   │   ├── val
-
+```
 ## Pretraining Weights
 Download: Download pre-trained weights(512*512 and 1024*1024) from:
 
