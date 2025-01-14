@@ -28,7 +28,6 @@ Traffic scene parsing from roadside views faces significant challenges due to li
   - RS2K: 68.46% mIoU
 
 ## Installation
-
 ```bash
 # Clone the repository
 git clone https://github.com/IronmanVsThanos/ATM-Traffic.git
@@ -46,8 +45,11 @@ pip install -r requirements.txt
 pip install future tensorboard
 # Install dependencies
 pip install -r requirements.txt
+```
+
 
 ## Dataset Preparation
+
 ├── data
 │   ├── cityscapes
 │   │   ├── leftImg8bit
