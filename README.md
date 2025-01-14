@@ -7,7 +7,7 @@
 This is the official implementation of "Cross-domain Traffic Scene Parsing via Vision Foundation Models: A Roadside Data Scarcity Solution"
 
 ## Video
-sunday：
+# sunday：
 https://github.com/user-attachments/assets/2dbba8c7-b4a2-4818-af12-d1a478e1383d
 # night：
 https://github.com/user-attachments/assets/cb8a9c54-7ec3-4745-85d0-fdb9ce4d0be8
@@ -78,7 +78,8 @@ pip install -r requirements.txt
 │   │   │   ├── val
 ```
 ## Pretraining Weights
-Download: Download pre-trained weights(512*512 and 1024*1024) from:
+Download: Download pre-trained weights(512*512 and 1024*1024) from:链接: https://pan.baidu.com/s/1ZzjVdNPYrMPZBDgfvVjOkQ?pwd=tjqh 提取码: tjqh 
+
 
 ## Training
 ```bash
