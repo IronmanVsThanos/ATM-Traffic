@@ -75,7 +75,9 @@ pip install -r requirements.txt
 ```
 ## 🚀Pretraining Weights
 Download: Download pre-trained weights(512*512 or 1024*1024) 
-from:链接: https://pan.baidu.com/s/1ayhDCYFoJ-FV9e5XwSnKBw?pwd=e93a 提取码: e93a 
+from:baidu：atm-weights
+link: https://pan.baidu.com/s/1pwJOW3Bp2dc2rZw-1QwdFQ?pwd=uiu5 code: uiu5 
+
 The RS3K dataset is currently undergoing data desensitization and will be coming soon.
 
 ## 🌟Training
